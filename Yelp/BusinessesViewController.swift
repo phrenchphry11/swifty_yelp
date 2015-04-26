@@ -27,6 +27,8 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         self.title = "Yelp"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Filter", style: .Plain, target: self, action: "onFilterButton")
         
+        self.navigationController?.navigationBar.barTintColor = UIColor.redColor()
+        
         self.fetchBusinessesWithQuery([], deals:0, distance:0, sort:0)
         
         // Table Search Results View
@@ -36,6 +38,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         self.tableView.registerNib(UINib(nibName: "BusinessCell", bundle: nil), forCellReuseIdentifier: "BusinessCell")
         self.tableView.estimatedRowHeight = 50
         self.tableView.rowHeight = UITableViewAutomaticDimension
+
     }
 
     override func didReceiveMemoryWarning() {
