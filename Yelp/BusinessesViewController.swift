@@ -18,6 +18,8 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     var filtered: [Business] = []
     
     var filters: [String : NSObject] = [:]
+    
+    var business: Business?
 
     var searchActive: Bool = false
 
@@ -38,7 +40,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         self.tableView.registerNib(UINib(nibName: "BusinessCell", bundle: nil), forCellReuseIdentifier: "BusinessCell")
         self.tableView.estimatedRowHeight = 50
         self.tableView.rowHeight = UITableViewAutomaticDimension
-
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,8 +48,15 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var filtersViewController = segue.destinationViewController as! FiltersViewController
-        filtersViewController.delegate = self
+        if (segue.identifier == "filtersViewSegue") {
+            var filtersViewController = segue.destinationViewController as! FiltersViewController
+            filtersViewController.delegate = self
+        }
+        else if (segue.identifier == "businessViewSegue") {
+            var businessViewController = segue.destinationViewController as! BusinessIndividualViewController
+            
+            businessViewController.business = self.business
+        }
     }
 
     
@@ -86,6 +95,10 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         var distance = filters["distance"] as! Int
         var sort = filters["sort"] as! Int
         self.fetchBusinessesWithQuery(categories, deals:deals, distance:distance, sort:sort)
+    }
+    
+    func didChangeBusiness(businessIndividualViewController: BusinessIndividualViewController, business: Business) {
+        self.business = business
     }
     
     func fetchBusinessesWithQuery(categories: [String], deals: Int, distance: Int, sort: Int) {
@@ -137,6 +150,23 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             searchActive = true;
         }
         self.tableView.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+ 
+        var business: Business?
+        
+        if (self.searchActive && self.filtered.count > 0) {
+            business = self.filtered[indexPath.row]
+        } else {
+            business = self.businesses[indexPath.row]
+        }
+        
+        self.business = business
+        performSegueWithIdentifier("businessViewSegue", sender: self)
+
+    
     }
 
 }

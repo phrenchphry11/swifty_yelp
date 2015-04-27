@@ -25,6 +25,8 @@
 		F4D8B0DB1AEC1BA400288294 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D8B0D91AEC1BA400288294 /* SwitchCell.xib */; };
 		F4D8B0DE1AED46C800288294 /* SegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0DC1AED46C800288294 /* SegmentCell.swift */; };
 		F4D8B0DF1AED46C800288294 /* SegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D8B0DD1AED46C800288294 /* SegmentCell.xib */; };
+		F4D8B0E41AEE5DFF00288294 /* BusinessIndividualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0E21AEE5DFF00288294 /* BusinessIndividualViewController.swift */; };
+		F4D8B0E51AEE5DFF00288294 /* BusinessIndividualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D8B0E31AEE5DFF00288294 /* BusinessIndividualViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		F4D8B0D91AEC1BA400288294 /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		F4D8B0DC1AED46C800288294 /* SegmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentCell.swift; sourceTree = "<group>"; };
 		F4D8B0DD1AED46C800288294 /* SegmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentCell.xib; sourceTree = "<group>"; };
+		F4D8B0E21AEE5DFF00288294 /* BusinessIndividualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessIndividualViewController.swift; sourceTree = "<group>"; };
+		F4D8B0E31AEE5DFF00288294 /* BusinessIndividualViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessIndividualViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,8 @@
 				22AAAA9B1AEA1EC300A544AF /* BusinessesViewController.swift */,
 				F4D8B0D21AEAFE6E00288294 /* FiltersViewController.swift */,
 				F4D8B0D31AEAFE6E00288294 /* FiltersViewController.xib */,
+				F4D8B0E21AEE5DFF00288294 /* BusinessIndividualViewController.swift */,
+				F4D8B0E31AEE5DFF00288294 /* BusinessIndividualViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				222D8A6019CCF9F900D2DB53 /* Main.storyboard in Resources */,
+				F4D8B0E51AEE5DFF00288294 /* BusinessIndividualViewController.xib in Resources */,
 				F4D8B0C51AEADF7800288294 /* BusinessCell.xib in Resources */,
 				F4D8B0DF1AED46C800288294 /* SegmentCell.xib in Resources */,
 				F4D8B0D51AEAFE6E00288294 /* FiltersViewController.xib in Resources */,
@@ -351,6 +358,7 @@
 				F4D8B0DE1AED46C800288294 /* SegmentCell.swift in Sources */,
 				F4D8B0D41AEAFE6E00288294 /* FiltersViewController.swift in Sources */,
 				222D8A5B19CCF9F900D2DB53 /* AppDelegate.swift in Sources */,
+				F4D8B0E41AEE5DFF00288294 /* BusinessIndividualViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

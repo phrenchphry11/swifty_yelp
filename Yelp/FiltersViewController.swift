@@ -20,12 +20,12 @@ enum FilterTypes : Int, Printable {
             switch self {
             case .Categories:
                 return "Categories"
-            case .Sort:
-                return "Sort by"
-            case .Distance:
-                return "Distance"
             case .Deals:
                 return "Deals"
+            case .Distance:
+                return "Distance"
+            case .Sort:
+                return "Sort by"
             }
         }
     }

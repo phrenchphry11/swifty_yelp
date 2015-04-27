@@ -24,10 +24,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="OqB-9I-w3L" secondAttribute="trailing" constant="-16" id="g8s-W8-vcx"/>
-                            <constraint firstItem="OqB-9I-w3L" firstAttribute="top" secondItem="XhR-oz-92f" secondAttribute="topMargin" id="iA3-un-6uZ"/>
-                            <constraint firstItem="VBY-gq-v8E" firstAttribute="top" secondItem="OqB-9I-w3L" secondAttribute="bottom" id="pQl-JA-9kN"/>
-                            <constraint firstItem="OqB-9I-w3L" firstAttribute="leading" secondItem="XhR-oz-92f" secondAttribute="leadingMargin" constant="-16" id="wCg-Jb-nQt"/>
+                            <constraint firstItem="OqB-9I-w3L" firstAttribute="bottom" secondItem="VBY-gq-v8E" secondAttribute="top" id="UZ6-62-gcR"/>
+                            <constraint firstAttribute="trailing" secondItem="OqB-9I-w3L" secondAttribute="trailing" id="fsf-mO-2LC"/>
+                            <constraint firstItem="OqB-9I-w3L" firstAttribute="top" secondItem="XhR-oz-92f" secondAttribute="top" id="nNs-tx-B8X"/>
+                            <constraint firstItem="OqB-9I-w3L" firstAttribute="leading" secondItem="XhR-oz-92f" secondAttribute="leading" id="yNO-ba-KU1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uRm-Go-4YY">
@@ -36,24 +36,90 @@
                             <rect key="frame" x="8" y="6" width="304" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="OUV-ra-2fP">
+                                <searchBar contentMode="redraw" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUV-ra-2fP">
                                     <rect key="frame" x="0.0" y="-5" width="304" height="44"/>
-                                    <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="barTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="OUV-ra-2fP" firstAttribute="leading" secondItem="oKc-HP-Arl" secondAttribute="leading" id="fRo-UD-ju1"/>
+                                <constraint firstAttribute="trailing" secondItem="OUV-ra-2fP" secondAttribute="trailing" id="yC9-4D-Ozv"/>
+                                <constraint firstItem="OUV-ra-2fP" firstAttribute="top" secondItem="oKc-HP-Arl" secondAttribute="top" constant="-5" id="zDU-QP-KXZ"/>
+                            </constraints>
                         </view>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="OUV-ra-2fP" id="cCi-GA-WFJ"/>
                         <outlet property="tableView" destination="OqB-9I-w3L" id="9R1-9C-8Y1"/>
                         <segue destination="zQl-vT-xKx" kind="push" identifier="filtersViewSegue" id="d0H-6a-PKK"/>
+                        <segue destination="Mes-G7-EyI" kind="push" identifier="businessViewSegue" id="M8x-Vz-kXI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgb-4b-F1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1412" y="485"/>
+        </scene>
+        <!--Business Details View Controller-->
+        <scene sceneID="IwC-Kq-apH">
+            <objects>
+                <viewController title="Business Details View Controller" id="Mes-G7-EyI" customClass="BusinessIndividualViewController" customModule="Yelp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dlm-UU-6QD"/>
+                        <viewControllerLayoutGuide type="bottom" id="oNt-IE-z3B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DLV-mR-tgW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pho King" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwL-qs-yyF">
+                                <rect key="frame" x="16" y="84" width="288" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0J-Cx-5AK">
+                                <rect key="frame" x="16" y="164" width="120" height="120"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1471 15th Street" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHf-Ev-AlU">
+                                <rect key="frame" x="157" y="164" width="128" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Snippet Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuD-hd-Qtp">
+                                <rect key="frame" x="16" y="292" width="288" height="124"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F0J-Cx-5AK" firstAttribute="top" secondItem="IwL-qs-yyF" secondAttribute="bottom" constant="8" id="IZr-s5-v6Z"/>
+                            <constraint firstItem="JuD-hd-Qtp" firstAttribute="leading" secondItem="DLV-mR-tgW" secondAttribute="leadingMargin" id="Yq7-hk-ESZ"/>
+                            <constraint firstItem="F0J-Cx-5AK" firstAttribute="leading" secondItem="DLV-mR-tgW" secondAttribute="leadingMargin" id="Z2b-NW-OHi"/>
+                            <constraint firstItem="eHf-Ev-AlU" firstAttribute="leading" secondItem="F0J-Cx-5AK" secondAttribute="trailing" constant="21" id="Zsf-Dh-FNw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eHf-Ev-AlU" secondAttribute="trailing" constant="19" id="eHg-y2-2w0"/>
+                            <constraint firstItem="JuD-hd-Qtp" firstAttribute="trailing" secondItem="DLV-mR-tgW" secondAttribute="trailingMargin" id="exr-I8-tvu"/>
+                            <constraint firstItem="IwL-qs-yyF" firstAttribute="top" secondItem="dlm-UU-6QD" secondAttribute="bottom" constant="20" id="hKQ-71-Pt8"/>
+                            <constraint firstItem="IwL-qs-yyF" firstAttribute="leading" secondItem="DLV-mR-tgW" secondAttribute="leadingMargin" id="iBa-dn-tCk"/>
+                            <constraint firstItem="JuD-hd-Qtp" firstAttribute="top" secondItem="F0J-Cx-5AK" secondAttribute="bottom" constant="8" id="mb7-3A-NQd"/>
+                            <constraint firstItem="eHf-Ev-AlU" firstAttribute="top" secondItem="IwL-qs-yyF" secondAttribute="bottom" constant="8" id="xcy-H7-TTK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="o2H-FQ-HIj"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="eHf-Ev-AlU" id="CZB-2y-IcV"/>
+                        <outlet property="businessImageView" destination="F0J-Cx-5AK" id="YUG-o2-wN0"/>
+                        <outlet property="businessNameLabel" destination="IwL-qs-yyF" id="HlY-Vm-1FL"/>
+                        <outlet property="snippetTextLabel" destination="JuD-hd-Qtp" id="4UI-So-dWj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mHC-tf-eIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1183" y="1193"/>
         </scene>
         <!--Filters View Controller-->
         <scene sceneID="YUm-iL-6EQ">

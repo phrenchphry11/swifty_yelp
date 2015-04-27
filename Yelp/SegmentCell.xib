@@ -34,8 +34,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="centerY" secondItem="yhr-Ji-IhF" secondAttribute="centerY" id="0FO-6O-fUQ"/>
-                    <constraint firstAttribute="centerY" secondItem="7x2-ve-jSK" secondAttribute="centerY" id="XLj-Vf-9g6"/>
-                    <constraint firstItem="7x2-ve-jSK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="wfR-Ui-VbK"/>
+                    <constraint firstAttribute="centerY" secondItem="7x2-ve-jSK" secondAttribute="centerY" id="cF8-kk-oFh"/>
+                    <constraint firstItem="7x2-ve-jSK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="jj7-bA-N7Y"/>
+                    <constraint firstItem="yhr-Ji-IhF" firstAttribute="leading" secondItem="7x2-ve-jSK" secondAttribute="trailing" constant="21" id="kIX-82-kux"/>
                     <constraint firstAttribute="trailingMargin" secondItem="yhr-Ji-IhF" secondAttribute="trailing" constant="13" id="zJP-Qp-FY7"/>
                 </constraints>
             </tableViewCellContentView>
