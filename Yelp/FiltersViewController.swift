@@ -62,6 +62,10 @@ class FiltersViewController: UIViewController, UITableViewDataSource, UITableVie
         return FilterTypes.fromValue(section).description
     }
     
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case FilterTypes.Categories.rawValue:
@@ -116,6 +120,14 @@ class FiltersViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.segmentCell.setTitle("Distance", forSegmentAtIndex: 1)
             cell.segmentCell.setTitle("Rating", forSegmentAtIndex: 2)
             return cell
+            
+        case FilterTypes.Deals.rawValue:
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("SwitchCell") as! SwitchCell
+            
+            cell.delegate = self
+            cell.titleLabel.text = "Offering a Deal"
+            cell.setSwitchValue(Filter.dealsEnabled())
+            return cell
         
         case FilterTypes.Distance.rawValue:
             let cell = self.tableView.dequeueReusableCellWithIdentifier("SegmentCell") as! SegmentCell
@@ -127,14 +139,6 @@ class FiltersViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.segmentCell.setTitle("1 mi", forSegmentAtIndex: 0)
             cell.segmentCell.setTitle("5 mi", forSegmentAtIndex: 1)
             cell.segmentCell.setTitle("10 mi", forSegmentAtIndex: 2)
-            return cell
-        
-        case FilterTypes.Deals.rawValue:
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("SwitchCell") as! SwitchCell
-        
-            cell.delegate = self
-            cell.titleLabel.text = "Offering a Deal"
-            cell.setSwitchValue(Filter.dealsEnabled())
             return cell
         
         default:
