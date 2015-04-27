@@ -26,6 +26,12 @@ class BusinessIndividualViewController: UIViewController {
     
     @IBOutlet weak var snippetTextLabel: UILabel!
     
+    @IBOutlet weak var reviewCountLabel: UILabel!
+    
+    @IBOutlet weak var categoryLabel: UILabel!
+    
+    @IBOutlet weak var ratingImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -35,7 +41,9 @@ class BusinessIndividualViewController: UIViewController {
         self.businessImageView.setImageWithURL(self.business.imageURL)
         self.addressLabel.text = self.business.address
         self.snippetTextLabel.text = self.business.snippet
-
+        self.reviewCountLabel.text = "\(self.business.reviewCount!) Reviews"
+        self.categoryLabel.text = self.business.categories
+        self.ratingImageView.setImageWithURL(self.business.ratingImageURL)
     }
 
     override func didReceiveMemoryWarning() {
